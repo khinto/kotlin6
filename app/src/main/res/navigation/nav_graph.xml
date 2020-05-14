@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+
+
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="ge.msda.myapplication.fragments.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notification"
+            app:destination="@id/navigation_notification" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="ge.msda.myapplication.fragments.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_NAV_new_fragment"
+            app:destination="@id/NAV_new_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="ge.msda.myapplication.fragments.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification">
+
+        <argument
+            android:name="amount"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_navigation_notification_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/NAV_new_fragment"
+        android:name="ge.msda.myapplication.fragments.NewFragment"
+
+        android:label="NEW"
+        tools:layout="@layout/new_fragment"
+
+        >
+
+
+    </fragment>
+</navigation>
